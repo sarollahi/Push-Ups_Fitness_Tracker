@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#7B7E8E</color>
+    <color name="colorPrimaryDark">#2B2D5C</color>
+    <color name="browser_actions_title_color">#2B2D5C</color>
+    <color name="colorSecondary">#0B74F5</color>
+    <color name="colorAccent">#0156E4</color>
+
+    <color name="white">#EEEEEE</color>
+    <color name="yellow">#fde000</color>
+    <color name="background">#424242</color>
+
+    <color name="splashScreenBackground">#03A9F4</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="textColorDark">#222233</color>
+</resources>

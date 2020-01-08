@@ -1,0 +1,196 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activities.TrackerActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/tracker_instruction"
+        android:textAlignment="center"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+
+    <Switch
+        android:id="@+id/vibrateSwitch"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/vibrate"
+        ads:layout_constraintBottom_toTopOf="@+id/constraint_actions"
+        android:layout_marginStart="20dp"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"/>
+
+
+
+    <TextView
+        android:id="@+id/countDisplay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:onClick="countUpButtonPressed"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="216sp"
+        ads:layout_constraintBottom_toTopOf="@+id/constraint_actions"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <Switch
+        android:id="@+id/soundSwitch"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/sound"
+        ads:layout_constraintBottom_toTopOf="@+id/constraint_actions"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/white"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"/>
+
+    <ImageButton
+        android:id="@+id/soundButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="@color/yellow"
+        android:background="@drawable/transparent_bg_bordered_circle_button"
+        app:srcCompat="@drawable/baseline_volume_up_24"
+        android:gravity="center_vertical|center_horizontal"
+        android:tint="@color/yellow"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintBottom_toTopOf="@+id/constraint_actions" />
+
+    <ImageButton
+        android:id="@+id/vibrateButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginStart="60dp"
+        android:backgroundTint="@color/yellow"
+        android:background="@drawable/transparent_bg_bordered_circle_button"
+        app:srcCompat="@drawable/baseline_vibration_24"
+        android:gravity="center_vertical|center_horizontal"
+        android:tint="@color/yellow"
+        ads:layout_constraintBottom_toTopOf="@+id/constraint_actions"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_actions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_square"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            ads:layout_constraintBottom_toTopOf="@+id/native_banner_ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_decrease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/transparent_bg_bordered_button"
+                android:backgroundTint="@color/yellow"
+                android:drawableStart="@drawable/ic_arrow_down"
+                android:drawableTint="@color/yellow"
+                android:onClick="decreaseButtonClicked"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/decrease"
+                android:textAllCaps="false"
+                android:textColor="@color/yellow"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent_bg_bordered_button"
+                android:backgroundTint="@color/yellow"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="5dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:onClick="savedButtonClicked"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/yellow"/>
+
+            <Button
+                android:id="@+id/button_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/transparent_bg_bordered_button"
+                android:backgroundTint="@color/yellow"
+                android:drawableStart="@drawable/ic_refresh"
+                android:drawableTint="@color/yellow"
+                android:onClick="refreshButtonPressed"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Reset"
+                android:textAllCaps="false"
+                android:textColor="@color/yellow"/>
+
+
+        </LinearLayout>
+
+        <com.facebook.ads.NativeAdLayout
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/native_banner_ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1"
+            android:layout_alignParentBottom="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
